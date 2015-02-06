@@ -1,0 +1,23 @@
+{
+  "name": "random_HAPIness",
+  "version": "0.0.0",
+  "description": "Hapi.js server to hit RandomUser API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/darthneel/random_HAPIness.git"
+  },
+  "author": "Neel Patel <neelp22@gmail.com> (https://github.com/darthneel)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darthneel/random_HAPIness/issues"
+  },
+  "homepage": "https://github.com/darthneel/random_HAPIness",
+  "dependencies": {
+    "hapi": "^8.1.0"
+  }
+}
