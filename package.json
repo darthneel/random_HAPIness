@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/darthneel/random_HAPIness",
   "dependencies": {
-    "hapi": "^8.1.0"
+    "hapi": "^8.1.0",
+    "request": "^2.53.0",
+    "good": "^5.1.1",
+    "good-console": "^4.1.0"
   }
 }
