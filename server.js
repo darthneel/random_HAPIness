@@ -5,7 +5,6 @@ var Good = require('good');
 var server = new Hapi.Server();
 server.connection({port: 3000});
 
-
 server.route({
 	method: "GET",
 	path: "/",
