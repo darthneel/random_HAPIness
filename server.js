@@ -1,6 +1,7 @@
 var Hapi = require('hapi');
-var request = require('request');
+var Request = require('request');
 var Good = require('good');
+var fs = require('fs');
 
 var server = new Hapi.Server();
 server.connection({port: 3000});
@@ -9,7 +10,8 @@ server.route({
 	method: "GET",
 	path: "/",
 	handler: function(req, res){
-		res("Yo breh");
+		// var html = fs.readFileSync('./views/index.html');
+		res.file('./views/index.html');
 	}
 });
 
@@ -17,12 +19,25 @@ server.route({
 	method: "GET",
 	path: '/random',
 	handler: function(req, res){
-		request('http://api.randomuser.me/', function(error, response, body){
+		Request('http://api.randomuser.me/', function(error, response, body){
 			console.log(body);
 		})
 		res('Hit random');
 	}
 });
+
+server.route({
+  path: "/static/{path*}",
+  method: "GET",
+  handler: {
+    directory: {
+      path: "./public",
+      listing: false,
+      index: false
+    }
+  }
+});
+
 
 server.register({
     register: Good,
