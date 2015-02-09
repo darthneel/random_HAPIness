@@ -15,9 +15,12 @@ server.route({
 
 server.route({
 	method: "GET",
-	path: '/{name}',
+	path: '/random',
 	handler: function(req, res){
-		res('Yo ' + req.params.name);
+		request('http://api.randomuser.me/', function(error, response, body){
+			console.log(body);
+		})
+		res('Hit random');
 	}
 });
 
